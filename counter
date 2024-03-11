@@ -1,0 +1,54 @@
+html code:-
+
+<section id="counter-section" data-aos="fade-right">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 counter-border">
+                    <div class="counter-div"><span class="count">42</span>%</div>
+                    <p>Years of experience</p>
+                </div>
+                <div class="col-lg-4 counter-border">
+                    <div class="counter-div"><span class="count">73</span>+</div>
+                    <p>Agency members</p>
+                </div>
+                <div class="col-lg-4 counter-border">
+                    <div class="counter-div"><span class="count">5</span>.000</div>
+                    <p>Projects complete</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+js code:-
+
+
+
+<script>
+        $(document).ready(function () {
+
+            var counters = $(".count");
+            var countersQuantity = counters.length;
+            var counter = [];
+
+            for (i = 0; i < countersQuantity; i++) {
+                counter[i] = parseInt(counters[i].innerHTML);
+            }
+
+            var count = function (start, value, id) {
+                var localStart = start;
+                setInterval(function () {
+                    if (localStart < value) {
+                        localStart++;
+                        counters[id].innerHTML = localStart;
+                    }
+                }, 100);
+            }
+
+            for (j = 0; j < countersQuantity; j++) {
+                count(0, counter[j], j);
+            }
+        });
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
